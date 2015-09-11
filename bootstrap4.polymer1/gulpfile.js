@@ -1,7 +1,7 @@
 "use strict";
 
 
-/* var gulp = require("gulp");
+var gulp = require("gulp");
 var runSequence = require("run-sequence");
 var sass = require("gulp-sass");
 
@@ -28,4 +28,4 @@ gulp.task("watch", function ()
     gulp.run("build");
 
     gulp.watch([], ["build"]);
-}); */
+});
