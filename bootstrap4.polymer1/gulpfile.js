@@ -11,8 +11,6 @@ gulp.task("scss-compile", function ()
     return gulp
     .src("./scss/index.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(svgCssInject())
-    .pipe(minifyCss())
     .pipe(gulp.dest("./dist"));
 });
 
