@@ -21,7 +21,7 @@ gulp.task("build", function ()
 });
 
 
-gulp.task("watch", function ()
+gulp.task("default", function ()
 {
     gulp.run("build");
 
