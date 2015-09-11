@@ -1,0 +1,19 @@
+{
+  "name": "bootstrap4.polymer1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/roosteronacid/testbed",
+  "authors": [
+    "Thomas Angelbo Christensen <thomas@eject.io>"
+  ],
+  "license": "UNLICENSE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
