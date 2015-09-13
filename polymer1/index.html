@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title></title>
+
+        <script src="./bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+        <link rel="import" href="./bower_components/polymer/polymer-mini.html">
+
+        <link rel="import" href="./bower_components/neon-animation/neon-animated-pages.html">
+        <link rel="import" href="./bower_components/neon-animation/neon-animatable.html">
+        <link rel="import" href="./bower_components/neon-animation/neon-animations.html">
+
+        <link rel="import" href="./bower_components/paper-material/paper-material.html">
+    </head>
+
+    <body>
+        <template is="dom-bind">
+            <div>
+                <button on-click="_onPrevClick">&lt;&lt;</button>
+                <button on-click="_onNextClick">&gt;&gt;</button>
+            </div>
+
+
+            <neon-animated-pages id="pages" selected="[[selected]]" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
+                <neon-animatable>
+                    <paper-material elevation="1">
+                    ... content ...
+                    </paper-material>
+                </neon-animatable>
+
+                <neon-animatable>
+                    <paper-material elevation="1">
+                    ... content ...
+                    </paper-material>
+                </neon-animatable>
+
+                <neon-animatable>
+                    <paper-material elevation="1">
+                    ... content ...
+                    </paper-material>
+                </neon-animatable>
+
+                <neon-animatable>
+                    <paper-material elevation="1">
+                    ... content ...
+                    </paper-material>
+                </neon-animatable>
+            </neon-animated-pages>
+        </template>
+
+        <script>
+
+            var scope = document.querySelector('template[is="dom-bind"]');
+            scope.selected = 0;
+
+            scope._onPrevClick = function ()
+            {
+                this.entryAnimation = 'slide-from-left-animation';
+                this.exitAnimation = 'slide-right-animation';
+                this.selected = this.selected === 0 ? 4 : (this.selected - 1);
+            }
+
+            scope._onNextClick = function ()
+            {
+                this.entryAnimation = 'slide-from-right-animation';
+                this.exitAnimation = 'slide-left-animation';
+                this.selected = this.selected === 4 ? 0 : (this.selected + 1);
+            }
+
+        </script>
+    </body>
+</html>
