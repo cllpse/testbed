@@ -1,0 +1,88 @@
+$grid-cell-height: 330px;
+$grid-cell-spacing: 10px;
+
+body
+{
+	background-color: $grey200;
+
+	&.mode-edit
+	{
+		.container.grid
+		{
+			.col-md-8, .col-md-4
+			{
+				> div:hover
+				{
+					box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+					border-bottom-color: $white;
+
+					> nav
+					{
+						top: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.container.grid
+{
+	margin-top: 70px;
+	margin-bottom: 70px;
+
+	.col-md-8, .col-md-4
+	{
+		&:last-child > div
+		{
+			margin-right: 0;
+		}
+
+		> div
+		{
+			transition: box-shadow ease-out .1s, border-bottom-color ease-out .1s;
+			min-height: $grid-cell-height;
+			overflow-y: hidden;
+			margin-right: $grid-cell-spacing;
+			margin-bottom: $grid-cell-spacing;
+			border-radius: 2px;
+			border-bottom: solid 1px $grey300;
+			background-color: $white;
+
+			> nav
+			{
+				transition: top ease .2s;
+				transition-delay: .2s;
+				position: relative;
+				z-index: 1;
+				left: 0;
+				right: $grid-cell-spacing;
+				top: -90px;
+				height: 90px;
+				padding: 0 20px;
+				padding-top: ceil(90px / 4);
+				background-color: $grey800;
+
+				a
+				{
+					display: inline-block;
+					color: $white;
+					text-align: center;
+					text-decoration: none;
+
+					i
+					{
+						display: block;
+					}
+				}
+			}
+
+			> div
+			{
+				position: relative;
+				top: -90px;
+				padding: 20px;
+			}
+		}
+	}
+}

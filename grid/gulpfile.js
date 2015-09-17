@@ -25,5 +25,5 @@ gulp.task("default", function ()
 {
     gulp.run("build");
 
-    gulp.watch([], ["build"]);
+    gulp.watch(["./scss/*.scss"], ["build"]);
 });
