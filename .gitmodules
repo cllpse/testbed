@@ -1,4 +1,9 @@
-[submodule "bootstrap"]
+[submodule "bootstrap4.polymer1/bootstrap"]
 	path = bootstrap4.polymer1/bootstrap
+	url = https://github.com/twbs/bootstrap.git
+	branch = v4-dev
+
+[submodule "grid/bootstrap"]
+	path = grid/bootstrap
 	url = https://github.com/twbs/bootstrap.git
 	branch = v4-dev
