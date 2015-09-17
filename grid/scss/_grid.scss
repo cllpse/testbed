@@ -1,6 +1,18 @@
 $grid-cell-height: 330px;
 $grid-cell-spacing: 10px;
 
+@mixin cell-shadow-active
+{
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+	border-bottom-color: $white;
+}
+
+@mixin cell-shadow-inactive
+{
+	box-shadow: none;
+	border-bottom-color: $grey300;
+}
+
 body
 {
 	background-color: $grey200;
@@ -13,21 +25,47 @@ body
 			{
 				opacity: 0.75;
 
-				&.active, &:hover
+				> div > nav
 				{
-					opacity: 1;
+					display: none;
 				}
 
-				> div:hover
+				&:hover > div
 				{
-					box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
-					opacity: 1;
-					border-bottom-color: $white;
+					@include cell-shadow-inactive;
+				}
 
-					> nav
+				&.mode-active
+				{
+					opacity: 1;
+
+					> div
 					{
-						top: 0;
+						@include cell-shadow-active;
+
+						> nav
+						{
+							display: block;
+						}
 					}
+				}
+			}
+		}
+
+		/* display bottom reset/preview/save bar */
+	}
+
+	.container.grid
+	{
+		.col-lg-8, .col-lg-4
+		{
+			&.mode-active > div, &:hover > div
+			{
+				@include cell-shadow-active;
+
+				> nav
+				{
+					top: 0;
 				}
 			}
 		}
@@ -41,6 +79,8 @@ body
 
 	.col-lg-8, .col-lg-4
 	{
+		transition: opacity ease-out .1s;
+
 		&:last-child > div
 		{
 			margin-right: 0;
@@ -53,13 +93,13 @@ body
 
 		> div
 		{
+			@include cell-shadow-inactive;
 			transition: box-shadow ease-out .1s, border-bottom-color ease-out .1s;
 			min-height: $grid-cell-height;
 			overflow-y: hidden;
 			margin-right: $grid-cell-spacing;
-			margin-bottom: $grid-cell-spacing - 1;
+			margin-bottom: $grid-cell-spacing - 1; /* equal cell spacing, visually */
 			border-radius: 2px;
-			border-bottom: solid 1px $grey300;
 			background-color: $white;
 
 			@include media-breakpoint-down(md)
@@ -78,9 +118,9 @@ body
 				right: $grid-cell-spacing;
 				top: -90px;
 				height: 90px;
-				padding: 0 20px;
 				padding-top: ceil(90px / 4);
 				background-color: $grey800;
+				overflow-x: hidden; /* fuck you, IE9! Suck a bag of dicks! */
 
 				a
 				{
@@ -100,6 +140,9 @@ body
 					i
 					{
 						display: block;
+						width: 24px;
+						height: 24px;
+						margin: 0 auto;
 					}
 				}
 			}
