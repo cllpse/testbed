@@ -25,7 +25,7 @@ body
 			{
 				transition: opacity ease-out .1s;
 
-				&.state-active, &:hover
+				&.state-editing-active, &:hover
 				{
 					> div
 					{
@@ -76,7 +76,7 @@ body
 					@include cell-shadow-inactive;
 				}
 
-				&.state-active
+				&.state-editing-active
 				{
 					opacity: 1;
 
@@ -121,6 +121,7 @@ body
 			margin-right: $grid-cell-spacing;
 			margin-bottom: $grid-cell-spacing - 1; /* equal cell spacing, visually - except, of course, for IE9 which can suck a bag of dicks! */
 			border-radius: 2px;
+			border-bottom: solid 1px $grey300;
 			background-color: $white;
 
 			@include media-breakpoint-down(md)
