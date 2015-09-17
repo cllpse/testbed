@@ -17,7 +17,43 @@ body
 {
 	background-color: $grey200;
 
-	&.mode-edit
+	&.state-editable
+	{
+		.container.grid
+		{
+			.col-lg-8, .col-lg-4
+			{
+				transition: opacity ease-out .1s;
+
+				&.state-active, &:hover
+				{
+					> div
+					{
+						@include cell-shadow-active;
+
+						> nav
+						{
+							top: 0;
+						}
+					}
+				}
+
+				> div
+				{
+					@include cell-shadow-inactive;
+					transition: box-shadow ease-out .1s, border-bottom-color ease-out .1s;
+
+					> nav
+					{
+						transition: top ease .2s;
+						transition-delay: .2s;
+					}
+				}
+			}
+		}
+	}
+
+	&.state-editing
 	{
 		.container.grid
 		{
@@ -28,6 +64,11 @@ body
 				> div > nav
 				{
 					display: none;
+
+					& + div
+					{
+						top: 0;
+					}
 				}
 
 				&:hover > div
@@ -35,7 +76,7 @@ body
 					@include cell-shadow-inactive;
 				}
 
-				&.mode-active
+				&.state-active
 				{
 					opacity: 1;
 
@@ -54,22 +95,6 @@ body
 
 		/* display bottom reset/preview/save bar */
 	}
-
-	.container.grid
-	{
-		.col-lg-8, .col-lg-4
-		{
-			&.mode-active > div, &:hover > div
-			{
-				@include cell-shadow-active;
-
-				> nav
-				{
-					top: 0;
-				}
-			}
-		}
-	}
 }
 
 .container.grid
@@ -79,8 +104,6 @@ body
 
 	.col-lg-8, .col-lg-4
 	{
-		transition: opacity ease-out .1s;
-
 		&:last-child > div
 		{
 			margin-right: 0;
@@ -93,12 +116,10 @@ body
 
 		> div
 		{
-			@include cell-shadow-inactive;
-			transition: box-shadow ease-out .1s, border-bottom-color ease-out .1s;
 			min-height: $grid-cell-height;
 			overflow-y: hidden;
 			margin-right: $grid-cell-spacing;
-			margin-bottom: $grid-cell-spacing - 1; /* equal cell spacing, visually */
+			margin-bottom: $grid-cell-spacing - 1; /* equal cell spacing, visually - except, of course, for IE9 which can suck a bag of dicks! */
 			border-radius: 2px;
 			background-color: $white;
 
@@ -110,8 +131,6 @@ body
 
 			> nav
 			{
-				transition: top ease .2s;
-				transition-delay: .2s;
 				position: relative;
 				z-index: 1;
 				left: 0;
@@ -122,16 +141,16 @@ body
 				background-color: $grey800;
 				overflow-x: hidden; /* fuck you, IE9! Suck a bag of dicks! */
 
-				a
+				> a
 				{
 					position: absolute;
-					display: inline-block;
 					left: 20px;
+					display: inline-block;
 					color: $white;
 					text-align: center;
 					text-decoration: none;
 
-					&:last-child
+					& + a, & + nav + a
 					{
 						left: auto;
 						right: 20px;
@@ -145,12 +164,37 @@ body
 						margin: 0 auto;
 					}
 				}
+
+				> nav
+				{
+					position: absolute;
+					left: 20px + 24;
+					right: 20px + 24;
+					top: 0;
+					bottom: 0;
+					text-align: center;
+
+					a
+					{
+						color: $white;
+						text-decoration: none;
+
+						i
+						{
+							line-height: 90px;
+						}
+					}
+				}
+
+				& + div
+				{
+					top: -90px;
+				}
 			}
 
 			> div
 			{
 				position: relative;
-				top: -90px;
 				padding: 20px;
 
 				@include media-breakpoint-only(xs)
