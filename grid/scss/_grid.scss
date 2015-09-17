@@ -9,11 +9,19 @@ body
 	{
 		.container.grid
 		{
-			.col-md-8, .col-md-4
+			.col-lg-8, .col-lg-4
 			{
+				opacity: 0.75;
+
+				&.active, &:hover
+				{
+					opacity: 1;
+				}
+
 				> div:hover
 				{
 					box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+					opacity: 1;
 					border-bottom-color: $white;
 
 					> nav
@@ -31,11 +39,16 @@ body
 	margin-top: 70px;
 	margin-bottom: 70px;
 
-	.col-md-8, .col-md-4
+	.col-lg-8, .col-lg-4
 	{
 		&:last-child > div
 		{
 			margin-right: 0;
+
+			@include media-breakpoint-down(md)
+			{
+				margin-right: 10px;
+			}
 		}
 
 		> div
@@ -44,10 +57,16 @@ body
 			min-height: $grid-cell-height;
 			overflow-y: hidden;
 			margin-right: $grid-cell-spacing;
-			margin-bottom: $grid-cell-spacing;
+			margin-bottom: $grid-cell-spacing - 1;
 			border-radius: 2px;
 			border-bottom: solid 1px $grey300;
 			background-color: $white;
+
+			@include media-breakpoint-down(md)
+			{
+				margin-left: 10px;
+				margin-right: 10px;
+			}
 
 			> nav
 			{
@@ -65,10 +84,18 @@ body
 
 				a
 				{
+					position: absolute;
 					display: inline-block;
+					left: 20px;
 					color: $white;
 					text-align: center;
 					text-decoration: none;
+
+					&:last-child
+					{
+						left: auto;
+						right: 20px;
+					}
 
 					i
 					{
@@ -82,6 +109,11 @@ body
 				position: relative;
 				top: -90px;
 				padding: 20px;
+
+				@include media-breakpoint-only(xs)
+				{
+					padding: 10px;
+				}
 			}
 		}
 	}

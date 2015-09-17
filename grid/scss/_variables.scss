@@ -117,7 +117,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:               12 !default;
-$grid-gutter-width:          0 !default; // 30px ALTERED
+$grid-gutter-width:          0 !default; // 1.875rem !default; // 30px
 
 
 // Typography
@@ -125,7 +125,7 @@ $grid-gutter-width:          0 !default; // 30px ALTERED
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-serif:          "Helvetica Neue", Helvetica, Arial, sans-serif !default; // Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 

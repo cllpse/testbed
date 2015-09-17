@@ -1,0 +1,44 @@
+@mixin media-helper($state)
+{
+    body:before
+	{
+		z-index: 999999999;
+		content: $state;
+		display: block;
+		position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 50px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+		background-color: cyan;
+		color: #fff;
+		font-weight: bold;
+	}
+}
+
+@include media-breakpoint-only(xs)
+{
+    @include media-helper("XS");
+}
+
+@include media-breakpoint-only(sm)
+{
+    @include media-helper("SM");
+}
+
+@include media-breakpoint-only(md)
+{
+    @include media-helper("MD");
+}
+
+@include media-breakpoint-only(lg)
+{
+    @include media-helper("LG");
+}
+
+@include media-breakpoint-only(xl)
+{
+    @include media-helper("XL");
+}
