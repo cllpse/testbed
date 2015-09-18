@@ -92,15 +92,13 @@ body
 				}
 			}
 		}
-
-		/* display bottom reset/preview/save bar */
 	}
 }
 
 .container.grid
 {
 	margin-top: 70px;
-	margin-bottom: 70px;
+	margin-bottom: 70px + 140; /* 140px is the height of the bottom controls */
 
 	.col-lg-8, .col-lg-4
 	{
@@ -163,6 +161,7 @@ body
 						width: 24px;
 						height: 24px;
 						margin: 0 auto;
+						margin-bottom: 2px;
 					}
 				}
 

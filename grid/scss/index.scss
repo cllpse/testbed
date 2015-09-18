@@ -1,12 +1,16 @@
-@import "variables";
+@import "./_colors.scss";
+@import "./_variables.scss";
+
 @import "../bootstrap/scss/mixins";
 @import "../bootstrap/scss/normalize";
 @import "../bootstrap/scss/reboot";
 @import "../bootstrap/scss/type";
 @import "../bootstrap/scss/grid";
 
-@import "_colors.scss";
+@import "./_media.scss";
 
-@import "_grid.scss";
+@import "./_type.scss";
+@import "./_icons.scss";
 
-@import "_media.scss";
+@import "./_grid.scss";
+@import "./_bottom-bar-controls.scss";
