@@ -23,7 +23,7 @@ body
 		{
 			.col-lg-8, .col-lg-4
 			{
-				transition: opacity ease-out .1s;
+				transition: opacity ease-out .15s;
 
 				&.state-editing-active, &:hover
 				{
@@ -41,12 +41,12 @@ body
 				> div
 				{
 					@include cell-shadow-inactive;
-					transition: box-shadow ease-out .1s, border-bottom-color ease-out .1s;
+					transition: box-shadow ease-out .15s, border-bottom-color ease-out .15s;
 
 					> nav
 					{
-						transition: top ease .2s;
-						transition-delay: .2s;
+						transition: top cubic-bezier(.1, 1, .1, 1) .5s;
+						transition-delay: .15s;
 					}
 				}
 			}
@@ -169,8 +169,8 @@ body
 				> nav
 				{
 					position: absolute;
-					left: 20px + 24;
-					right: 20px + 24;
+					left: 20px * 6;
+					right: 20px * 6;
 					top: 0;
 					bottom: 0;
 					text-align: center;
@@ -179,10 +179,18 @@ body
 					{
 						color: $white;
 						text-decoration: none;
+						margin-right: $grid-cell-spacing;
+
+						&:last-child
+						{
+							margin-right: 0;
+						}
 
 						i
 						{
 							line-height: 90px;
+							width: 24px;
+							height: 24px;
 						}
 					}
 				}
