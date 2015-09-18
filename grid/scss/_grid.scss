@@ -23,7 +23,7 @@ body
 		{
 			.col-lg-8, .col-lg-4
 			{
-				transition: opacity ease-out .15s;
+				// transition: opacity ease-out .15s;
 
 				&.state-editing-active, &:hover
 				{
@@ -41,12 +41,12 @@ body
 				> div
 				{
 					@include cell-shadow-inactive;
-					transition: box-shadow ease-out .15s, border-bottom-color ease-out .15s;
+					transition: box-shadow cubic-bezier(.5, 1, 0.15, 1) .25s, border-bottom-color cubic-bezier(.5, 1, 0.15, 1) .25s;
 
 					> nav
 					{
-						transition: top cubic-bezier(.1, 1, .1, 1) .5s;
-						transition-delay: .15s;
+						transition: top cubic-bezier(.5, 1, 0.15, 1) .25s;
+						transition-delay: .25s;
 					}
 				}
 			}
