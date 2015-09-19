@@ -18,8 +18,7 @@ body
 
 			@include media-breakpoint-down(sm)
 			{
-				height: auto;
-				bottom: 0;
+				display: none;
 			}
 
 			> h4
@@ -35,11 +34,6 @@ body
 					margin-left: 40px;
 					text-align: left;
 				}
-
-				@include media-breakpoint-down(sm)
-				{
-					position: static;
-				}
 			}
 
 			> nav
@@ -49,11 +43,6 @@ body
 				height: 140px;
 				padding-top: ceil(140px / 4.5);
 
-				@include media-breakpoint-down(sm)
-				{
-					position: static;
-				}
-
 				> a
 				{
 					display: inline-block;
@@ -62,8 +51,25 @@ body
 					text-decoration: none;
 					color: $grey700;
 
+					&:hover
+					{
+						i
+						{
+							box-shadow: none;
+							font-weight: 700;
+						}
+					}
+
 					& + a
 					{
+						&:hover
+						{
+							i
+							{
+								font-weight: 400;
+							}
+						}
+
 						i
 						{
 							box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
@@ -90,6 +96,7 @@ body
 						margin: 0 auto;
 						margin-bottom: 10px;
 						border-radius: 6px;
+						font-size: 36px;
 						line-height: 48px + 10;
 					}
 				}

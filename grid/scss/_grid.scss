@@ -25,76 +25,80 @@ body
 {
 	background-color: $grey200;
 
-	&.state-editable
+	/* only allow editing on tablets and browsers */
+	@include media-breakpoint-up(md)
 	{
-		.container.grid
+		&.state-editable
 		{
-			.col-lg-8, .col-lg-4
+			.container.grid
 			{
-				transition: opacity cubic-bezier(.5, 1, 0.15, 1) .25s;
-
-				&.state-editing-active, &:hover
+				.col-lg-8, .col-lg-4
 				{
+					transition: opacity cubic-bezier(.5, 1, 0.15, 1) .25s;
+
+					&.state-editing-active, &:hover
+					{
+						> div
+						{
+							@include cell-shadow-active;
+
+							> nav
+							{
+								top: 0;
+							}
+						}
+					}
+
 					> div
 					{
-						@include cell-shadow-active;
+						@include cell-shadow-inactive;
+						transition: box-shadow cubic-bezier(.5, 1, 0.15, 1) .25s, border-bottom-color cubic-bezier(.5, 1, 0.15, 1) .25s;
 
 						> nav
 						{
-							top: 0;
+							transition: top cubic-bezier(.5, 1, 0.15, 1) .25s;
+							transition-delay: .25s;
 						}
-					}
-				}
-
-				> div
-				{
-					@include cell-shadow-inactive;
-					transition: box-shadow cubic-bezier(.5, 1, 0.15, 1) .25s, border-bottom-color cubic-bezier(.5, 1, 0.15, 1) .25s;
-
-					> nav
-					{
-						transition: top cubic-bezier(.5, 1, 0.15, 1) .25s;
-						transition-delay: .25s;
 					}
 				}
 			}
 		}
-	}
 
-	&.state-editing
-	{
-		.container.grid
+		&.state-editing
 		{
-			.col-lg-8, .col-lg-4
+			.container.grid
 			{
-				opacity: 0.75;
-
-				> div > nav
+				.col-lg-8, .col-lg-4
 				{
-					display: none;
+					opacity: 0.75;
 
-					& + div
+					> div > nav
 					{
-						top: 0;
-					}
-				}
+						display: none;
 
-				&:hover > div
-				{
-					@include cell-shadow-inactive;
-				}
-
-				&.state-editing-active
-				{
-					opacity: 1;
-
-					> div
-					{
-						@include cell-shadow-active;
-
-						> nav
+						& + div
 						{
-							display: block;
+							top: 0;
+						}
+					}
+
+					&:hover > div
+					{
+						@include cell-shadow-inactive;
+					}
+
+					&.state-editing-active
+					{
+						opacity: 1;
+
+						> div
+						{
+							@include cell-shadow-active;
+
+							> nav
+							{
+								display: block;
+							}
 						}
 					}
 				}
