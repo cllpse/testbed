@@ -13,6 +13,14 @@ $grid-cell-spacing: 10px;
 	border-bottom-color: $grey300;
 }
 
+@media (min-width: 62em)
+{
+	.col-lg-4
+	{
+	    width: 33.3% !important; /* alignment fix - some browsers fail to calculate the default value: 33.33333% because decimals! Yay! */
+	}
+}
+
 body
 {
 	background-color: $grey200;
@@ -23,7 +31,7 @@ body
 		{
 			.col-lg-8, .col-lg-4
 			{
-				// transition: opacity ease-out .15s;
+				transition: opacity cubic-bezier(.5, 1, 0.15, 1) .25s;
 
 				&.state-editing-active, &:hover
 				{
@@ -128,26 +136,45 @@ body
 				margin-right: 10px;
 			}
 
+			nav a
+			{
+				border-bottom: solid 1px transparent;
+				text-align: center;
+				text-decoration: none;
+				color: $white;
+
+				i
+				{
+					display: block;
+					width: 24px;
+					height: 24px;
+					margin: 0 auto;
+				}
+			}
+
+			nav a:hover
+			{
+				border-bottom: solid 1px $white;
+			}
+
 			> nav
 			{
 				position: relative;
 				z-index: 1;
 				left: 0;
+				opacity: .95;
 				right: $grid-cell-spacing;
 				top: -90px;
 				height: 90px;
-				padding-top: ceil(90px / 4);
 				background-color: $grey800;
 				overflow-x: hidden; /* fuck you, IE9! Suck a bag of dicks! */
 
 				> a
 				{
+					display: block;
 					position: absolute;
 					left: 20px;
-					display: inline-block;
-					color: $white;
-					text-align: center;
-					text-decoration: none;
+					margin-top: ceil(90px / 4);
 
 					& + a, & + nav + a
 					{
@@ -157,10 +184,6 @@ body
 
 					i
 					{
-						display: block;
-						width: 24px;
-						height: 24px;
-						margin: 0 auto;
 						margin-bottom: 2px;
 					}
 				}
@@ -170,27 +193,14 @@ body
 					position: absolute;
 					left: 20px * 6;
 					right: 20px * 6;
-					top: 0;
-					bottom: 0;
 					text-align: center;
+					height: 90px;
 
-					a
+					> a
 					{
-						color: $white;
-						text-decoration: none;
+						display: inline-block;
+						margin-top: ceil(90px / 2.5);
 						margin-right: $grid-cell-spacing;
-
-						&:last-child
-						{
-							margin-right: 0;
-						}
-
-						i
-						{
-							line-height: 90px;
-							width: 24px;
-							height: 24px;
-						}
 					}
 				}
 
