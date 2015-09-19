@@ -17,7 +17,7 @@ $grid-cell-spacing: 10px;
 {
 	.col-lg-4
 	{
-	    width: 33.3% !important; /* alignment fix - some browsers fail to calculate the default value: 33.33333% because decimals! Yay! */
+	    width: 33.3% !important; // alignment fix - some browsers fail to calculate the default value: 33.33333% because decimals! Yay!
 	}
 }
 
@@ -25,8 +25,8 @@ body
 {
 	background-color: $grey200;
 
-	/* only allow editing on tablets and browsers */
-	@include media-breakpoint-up(md)
+
+	@include media-breakpoint-up(md) // only allow editing on tablets and browsers
 	{
 		&.state-editable
 		{
@@ -70,13 +70,18 @@ body
 			{
 				.col-lg-8, .col-lg-4
 				{
-					opacity: 0.75;
+					opacity: 0.70;
 
 					> div > nav
 					{
 						display: none;
 
-						& + div
+						& + menu
+						{
+							display: none;
+						}
+
+						& + menu + div
 						{
 							top: 0;
 						}
@@ -110,7 +115,7 @@ body
 .container.grid
 {
 	margin-top: 70px;
-	margin-bottom: 70px + 140; /* 140px is the height of the bottom controls */
+	margin-bottom: 70px + 140; // 140px is the height of the bottom controls
 
 	.col-lg-8, .col-lg-4
 	{
@@ -129,7 +134,7 @@ body
 			min-height: $grid-cell-height;
 			overflow-y: hidden;
 			margin-right: $grid-cell-spacing;
-			margin-bottom: $grid-cell-spacing - 1; /* equal cell spacing, visually - except, of course, for IE9 which can suck a bag of dicks! */
+			margin-bottom: $grid-cell-spacing - 1; // equal cell spacing, visually - except, of course, for IE9 which can suck a bag of dicks!
 			border-radius: 2px;
 			border-bottom: solid 1px $grey300;
 			background-color: $white;
@@ -164,14 +169,14 @@ body
 			> nav
 			{
 				position: relative;
-				z-index: 1;
+				z-index: 2;
 				left: 0;
 				opacity: .95;
 				right: $grid-cell-spacing;
 				top: -90px;
 				height: 90px;
 				background-color: $grey800;
-				overflow-x: hidden; /* fuck you, IE9! Suck a bag of dicks! */
+				overflow-x: hidden; // fuck you, IE9! Suck a bag of dicks!
 
 				> a
 				{
@@ -208,9 +213,43 @@ body
 					}
 				}
 
-				& + div
+				& + menu + div
 				{
 					top: -90px;
+				}
+			}
+
+			> menu
+			{
+				position: absolute;
+				right: 0;
+				top: 0;
+				margin: 0;
+				padding: 0;
+				text-align: right;
+				z-index: 1;
+
+				@include media-breakpoint-up(lg)
+				{
+					display: none;
+				}
+
+				@include media-breakpoint-down(sm)
+				{
+					display: none;
+				}
+
+				a
+				{
+					display: inline-block;
+					border-radius: 2px;
+					width: 24px;
+					height: 24px;
+					margin-right: $grid-cell-spacing * 2;
+					margin-top: $grid-cell-spacing;
+					opacity: .95;
+					color: $white;
+					background-color: $grey800;
 				}
 			}
 
