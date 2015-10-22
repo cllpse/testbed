@@ -3,12 +3,17 @@
 
 g[id] path
 {
-	stroke: #222;
-	fill: #222;
-
+	stroke: #000;
+	fill: #000;
 }
 
-g[id = "9982"] path
+g[id="5900"] path
+{
+	fill: lime;
+	stroke: lime;
+}
+
+g[id="5700"] path
 {
 	fill: lime;
 	stroke: lime;
