@@ -1,0 +1,15 @@
+/* <object type="image/svg+xml" data="map.svg"></object>
+<?xml-stylesheet type="text/css" href="map.css"?> */
+
+g[id] path
+{
+	stroke: #222;
+	fill: #222;
+
+}
+
+g[id = "9982"] path
+{
+	fill: lime;
+	stroke: lime;
+}
