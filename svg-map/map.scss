@@ -1,0 +1,17 @@
+/* <object type="image/svg+xml" data="map.svg"></object>
+<?xml-stylesheet type="text/css" href="map.css"?> */
+
+g[id] path
+{
+	stroke: #000;
+	fill: #000;
+}
+
+@for $i from 5000 through 7600
+{
+	g[id="#{$i}"] path
+	{
+		fill: lime;
+		stroke: lime;
+	}
+}
