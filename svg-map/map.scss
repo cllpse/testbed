@@ -7,7 +7,7 @@ g[id] path
 	fill: #000;
 }
 
-@for $i from 5000 through 7600
+@for $i from 5000 through 6000
 {
 	g[id="#{$i}"] path
 	{
