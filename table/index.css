@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #EEEEEE; }
+  body table {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+    border-collapse: collapse;
+    border-radius: 2px;
+    width: 992px;
+    margin: 0 auto;
+    margin-top: 110px;
+    background-color: #FFF; }
+    body table tr.parent td {
+      background-color: #F5F5F5; }
+    body table tr.parent:hover + tr.child td,
+    body table tr.parent:hover + tr.child + tr.child td,
+    body table tr.parent:hover + tr.child + tr.child + tr.child td,
+    body table tr.parent:hover + tr.child + tr.child + tr.child + tr.child td,
+    body table tr.parent:hover + tr.child + tr.child + tr.child + tr.child + tr.child td,
+    body table tr.parent:hover + tr.child + tr.child + tr.child + tr.child + tr.child + tr.child td,
+    body table tr.parent:hover + tr.child + tr.child + tr.child + tr.child + tr.child + tr.child + tr.child td {
+      background-color: #FFFDE7; }
+    body table tr.child td:first-child {
+      padding-left: 32px; }
+    body table tr.child td + td {
+      background-color: #F5F5F5; }
+    body table tr:hover td {
+      background-color: #FFF9C4 !important; }
+    body table tr td {
+      transition: background-color cubic-bezier(0.5, 1, 0.15, 1) 0.1s;
+      height: 40px;
+      max-height: auto;
+      padding: 10px;
+      border: solid 1px #EEEEEE;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center; }
+      body table tr td:first-child {
+        text-align: left; }
+        body table tr td:first-child em {
+          display: block;
+          max-width: 100%;
+          font-style: normal;
+          margin-top: 5px; }
+      body table tr td em {
+        display: inline-block;
+        max-width: 100px;
+        font-size: 13px;
+        line-height: 19.5px; }
+      body table tr td a {
+        color: #2979FF; }
+        body table tr td a:hover {
+          text-decoration: none; }
+      body table tr td + td {
+        width: 20%; }
+    body table thead tr.prices td {
+      font-size: 26px; }
+    body table thead tr td {
+      font-weight: 600;
+      text-align: center; }
