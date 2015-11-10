@@ -1,12 +1,214 @@
-body {
-  /* #content
-	{
-		border-radius: 2px;
-		border: 0;
-		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
-	} */ }
-  body #security {
-    display: none !important; }
+body #security, body #footer {
+  display: none !important; }
+
+body #page_wrapper {
+  margin: 55px 0;
+  padding-bottom: 0 !important; }
+
+body #page_column {
+  background-color: red;
+  width: 992px;
+  margin: 0 auto; }
+  body #page_column * {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 300;
+    line-height: 24px !important;
+    color: #000; }
+  body #page_column #content {
+    background-color: fuchsia;
+    border-radius: 2px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+    width: auto;
+    padding: 20px;
+    border: 0; }
+    body #page_column #content #company {
+      background-color: green;
+      padding-bottom: 0; }
+    body #page_column #content > h1 {
+      background-color: brown;
+      float: none;
+      clear: both;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      border: 0; }
+    body #page_column #content #hosted-description {
+      background-color: lightblue; }
+      body #page_column #content #hosted-description > p {
+        margin: 0; }
+    body #page_column #content #errorExplanation {
+      background-color: yellow;
+      overflow: auto;
+      border-radius: 0;
+      float: none;
+      clear: both;
+      border: 0;
+      margin-bottom: 0; }
+      body #page_column #content #errorExplanation > h2 {
+        width: auto;
+        padding: 0;
+        color: #000;
+        background-color: transparent; }
+      body #page_column #content #errorExplanation > p {
+        padding: 0;
+        color: #000; }
+      body #page_column #content #errorExplanation > ul {
+        padding-bottom: 0; }
+        body #page_column #content #errorExplanation > ul li {
+          color: #000; }
+    body #page_column #content form > h2 {
+      background-color: cyan;
+      float: none;
+      clear: both;
+      padding-bottom: 0; }
+    body #page_column #content form > div {
+      background-color: lightgreen;
+      border-radius: 0;
+      float: none;
+      clear: both;
+      overflow: auto;
+      width: auto;
+      margin-bottom: 0;
+      padding: 0; }
+      body #page_column #content form > div > h2 {
+        background-color: cyan;
+        padding-bottom: 0; }
+      body #page_column #content form > div > div {
+        background-color: lightyellow;
+        border-radius: 0;
+        float: none;
+        clear: both;
+        margin-bottom: 0;
+        padding: 0;
+        width: auto; }
+        body #page_column #content form > div > div > ul {
+          background-color: darkred;
+          padding-bottom: 0; }
+          body #page_column #content form > div > div > ul li {
+            padding-bottom: 0; }
+        body #page_column #content form > div > div > p {
+          float: none;
+          clear: both;
+          padding: 0; }
+        body #page_column #content form > div > div > div {
+          background-color: red;
+          padding-bottom: 0;
+          margin-bottom: 0; }
+          body #page_column #content form > div > div > div > p {
+            background-color: pink;
+            float: none;
+            clear: both; }
+          body #page_column #content form > div > div > div > div {
+            background-color: green;
+            float: none;
+            clear: both;
+            margin-right: 0;
+            padding-top: 0; }
+        body #page_column #content form > div > div > div + div {
+          background-color: orange;
+          float: none;
+          clear: both;
+          margin-left: 0;
+          margin-top: 0; }
+      body #page_column #content form > div input, body #page_column #content form > div select {
+        border-radius: 2px;
+        float: none;
+        clear: both;
+        width: auto;
+        margin: 0;
+        padding: 2.5px 10px;
+        border: solid 1px #9E9E9E; }
+      body #page_column #content form > div label {
+        display: inline-block; }
+    body #page_column #content form .button_wrapper > a, body #page_column #content form .button_wrapper > #tl_popupSC5 {
+      display: none !important; }
+    body #page_column #content form .button_wrapper input {
+      float: none;
+      clear: both; }
+    body #page_column #content form #apply_component_button, body #page_column #content form #vat_button, body #page_column #content form #subscription_submit {
+      display: inline-block;
+      border-radius: 6px;
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 10px;
+      border: 0;
+      background: #000;
+      color: #fff; }
 
 html > body {
   visibility: visible !important; }
+
+html > body {
+  background-color: #E0E0E0; }
+  html > body #page_wrapper #page_column #content {
+    background-color: #fff; }
+    html > body #page_wrapper #page_column #content #company {
+      background-color: transparent; }
+      html > body #page_wrapper #page_column #content #company a img {
+        width: 120px !important;
+        height: 40px !important; }
+    html > body #page_wrapper #page_column #content h1 {
+      background-color: transparent;
+      margin-top: 30px;
+      font-size: 36px !important;
+      font-weight: 400 !important;
+      line-height: 54px !important; }
+    html > body #page_wrapper #page_column #content h2 {
+      font-size: 24px !important;
+      font-weight: 400 !important;
+      line-height: 36px !important; }
+    html > body #page_wrapper #page_column #content #hosted-description {
+      background-color: transparent;
+      margin-top: 10px; }
+    html > body #page_wrapper #page_column #content form label {
+      font-weight: 400; }
+    html > body #page_wrapper #page_column #content form h2 {
+      background-color: transparent;
+      margin-top: 30px; }
+    html > body #page_wrapper #page_column #content form h2 + div {
+      margin-top: 10px; }
+    html > body #page_wrapper #page_column #content form h2 + div label {
+      margin-top: 10px; }
+    html > body #page_wrapper #page_column #content form h2 + div input, html > body #page_wrapper #page_column #content form h2 + div select {
+      margin-top: 5px; }
+    html > body #page_wrapper #page_column #content form .component_configuration {
+      background-color: transparent; }
+      html > body #page_wrapper #page_column #content form .component_configuration > div {
+        border-radius: 2px;
+        margin: 30px 0;
+        margin-left: 0;
+        padding: 10px;
+        padding-top: 0;
+        background-color: #EEEEEE; }
+        html > body #page_wrapper #page_column #content form .component_configuration > div:first-child {
+          margin-top: 0; }
+        html > body #page_wrapper #page_column #content form .component_configuration > div:last-child {
+          background-color: transparent;
+          padding: 0; }
+        html > body #page_wrapper #page_column #content form .component_configuration > div > div {
+          background-color: transparent;
+          float: none !important;
+          clear: both !important; }
+        html > body #page_wrapper #page_column #content form .component_configuration > div br {
+          display: none !important; }
+        html > body #page_wrapper #page_column #content form .component_configuration > div .component-info {
+          background-color: #E0E0E0;
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px;
+          margin-left: -10px;
+          margin-right: -10px;
+          margin-bottom: -10px;
+          margin-top: 10px;
+          padding: 10px;
+          /* .component-price:after
+								{
+									display: inline-block;
+									position: relative;
+									content: "(per enhed)";
+									margin-left: 10px;
+									color: $grey600;
+								} */ }
+          html > body #page_wrapper #page_column #content form .component_configuration > div .component-info .component-multiplier {
+            display: none; }

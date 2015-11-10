@@ -2,21 +2,404 @@
 
 body
 {
-	#security
+	#security, #footer
 	{
 		display: none !important;
 	}
 
-	/* #content
+	#page_wrapper
 	{
-		border-radius: 2px;
-		border: 0;
-		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
-	} */
+		margin: 55px 0;
+		padding-bottom: 0 !important;
+	}
+
+	#page_column
+	{
+		background-color: red;
+
+		width: 992px;
+		margin: 0 auto;
+
+		*
+		{
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+			font-size: 16px !important;
+			font-weight: 300;
+			line-height: 16px * 1.5 !important;
+			color: #000;
+		}
+
+		#content
+		{
+			background-color: fuchsia;
+
+			border-radius: 2px;
+			box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+			width: auto;
+			padding: 20px;
+			border: 0;
+
+			#company
+			{
+				background-color: green;
+
+				padding-bottom: 0;
+			}
+
+			> h1
+			{
+				background-color: brown;
+
+				float: none;
+				clear: both;
+				margin-bottom: 0;
+				padding-top: 0;
+				padding-bottom: 0;
+				border: 0;
+			}
+
+			#hosted-description
+			{
+				background-color: lightblue;
+
+				> p
+				{
+					margin: 0;
+				}
+			}
+
+			#errorExplanation
+			{
+				background-color: yellow;
+
+				overflow: auto;
+				border-radius: 0;
+				float: none;
+				clear: both;
+				border: 0;
+				margin-bottom: 0;
+
+				> h2
+				{
+					width: auto;
+					padding: 0;
+					color: #000;
+					background-color: transparent;
+				}
+
+				> p
+				{
+					padding: 0;
+					color: #000;
+				}
+
+				> ul
+				{
+					padding-bottom: 0;
+
+					li
+					{
+						color: #000;
+					}
+				}
+			}
+
+			form
+			{
+				> h2
+				{
+					background-color: cyan;
+
+					float: none;
+					clear: both;
+					padding-bottom: 0;
+				}
+
+				> div
+				{
+					background-color: lightgreen;
+
+					border-radius: 0;
+					float: none;
+					clear: both;
+					overflow: auto;
+					width: auto;
+					margin-bottom: 0;
+					padding: 0;
+
+					> h2
+					{
+						background-color: cyan;
+
+						padding-bottom: 0;
+					}
+
+					> div
+					{
+						background-color: lightyellow;
+
+						border-radius: 0;
+						float: none;
+						clear: both;
+						margin-bottom: 0;
+						padding: 0;
+						width: auto;
+
+						> ul
+						{
+							background-color: darkred;
+
+							padding-bottom: 0;
+
+							li
+							{
+								padding-bottom: 0;
+							}
+						}
+
+						> p
+						{
+							float: none;
+							clear: both;
+							padding: 0;
+						}
+
+						> div
+						{
+							background-color: red;
+
+							padding-bottom: 0;
+							margin-bottom: 0;
+
+							> p
+							{
+								background-color: pink;
+
+								float: none;
+								clear: both;
+							}
+
+							> div
+							{
+								background-color: green;
+
+								float: none;
+								clear: both;
+								margin-right: 0;
+								padding-top: 0;
+							}
+						}
+
+						> div + div
+						{
+							background-color: orange;
+
+							float: none;
+							clear: both;
+							margin-left: 0;
+							margin-top: 0;
+						}
+					}
+
+					input, select
+					{
+						border-radius: 2px;
+						float: none;
+						clear: both;
+						width: auto;
+						margin: 0;
+						padding: 2.5px 10px;
+						border: solid 1px $grey500;
+
+					}
+
+					label
+					{
+						display: inline-block;
+					}
+				}
+
+				.button_wrapper
+				{
+					> a, > #tl_popupSC5
+					{
+						display: none !important;
+					}
+
+					input
+					{
+						float: none;
+						clear: both;
+					}
+				}
+
+				#apply_component_button, #vat_button, #subscription_submit
+				{
+					display: inline-block;
+					border-radius: 6px;
+					width: auto;
+					height: auto;
+					margin: 0;
+					padding: 10px;
+					border: 0;
+					background: #000;
+					color: #fff;
+				}
+			}
+		}
+	}
 }
 
 
 html > body
 {
 	visibility: visible !important;
+}
+
+html > body
+{
+	background-color: $grey300;
+
+	#page_wrapper
+	{
+		#page_column
+		{
+			#content
+			{
+				background-color: #fff;
+
+				#company
+				{
+					background-color: transparent;
+
+					a img
+					{
+						width: 120px !important;
+						height: 40px !important;
+					}
+				}
+
+				h1
+				{
+					background-color: transparent;
+					margin-top: 30px;
+					font-size: 36px !important;
+					font-weight: 400 !important;
+					line-height: 36px * 1.5 !important;
+				}
+
+				h2
+				{
+					font-size: 24px !important;
+					font-weight: 400 !important;
+					line-height: 24px * 1.5 !important;
+
+				}
+
+				#hosted-description
+				{
+					background-color: transparent;
+					margin-top: 10px;
+				}
+
+				form
+				{
+					label
+					{
+						font-weight: 400;
+					}
+
+					h2
+					{
+						background-color: transparent;
+						margin-top: 30px;
+					}
+
+					h2 + div
+					{
+						margin-top: 10px;
+					}
+
+					h2 + div label
+					{
+						margin-top: 10px;
+					}
+
+					h2 + div input, h2 + div select
+					{
+						margin-top: 5px;
+					}
+
+					.component_configuration
+					{
+						background-color: transparent;
+
+						> div
+						{
+							border-radius: 2px;
+							margin: 30px 0;
+							margin-left: 0;
+							padding: 10px;
+							padding-top: 0;
+							background-color: $grey200;
+
+							&:first-child
+							{
+								margin-top: 0;
+							}
+
+							&:last-child
+							{
+								background-color: transparent;
+								padding: 0;
+							}
+
+							> div
+							{
+								background-color: transparent;
+								float: none !important;
+								clear: both !important;
+							}
+
+							br
+							{
+								display: none !important;
+							}
+
+							.component-description
+							{
+								// color: $grey500;
+							}
+
+							.component-info
+							{
+								background-color: $grey300;
+								border-bottom-left-radius: 2px;
+								border-bottom-right-radius: 2px;
+								margin-left: -10px;
+								margin-right: -10px;
+								margin-bottom: -10px;
+								margin-top: 10px;
+								padding: 10px;
+
+								.component-multiplier
+								{
+									display: none;
+								}
+
+								/* .component-price:after
+								{
+									display: inline-block;
+									position: relative;
+									content: "(per enhed)";
+									margin-left: 10px;
+									color: $grey600;
+								} */
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
