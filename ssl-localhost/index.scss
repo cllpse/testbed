@@ -1,1 +1,22 @@
 @import "./_colors.scss";
+
+body
+{
+	#security
+	{
+		display: none !important;
+	}
+
+	/* #content
+	{
+		border-radius: 2px;
+		border: 0;
+		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+	} */
+}
+
+
+html > body
+{
+	visibility: visible !important;
+}
