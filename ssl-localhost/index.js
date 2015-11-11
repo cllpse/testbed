@@ -36,7 +36,6 @@ $(function ()
         {
             // top level headers
             "Configure Your Plan:":     "Tilkøb point og services",
-            "Purchase Summary:":        "Purchase Summary",
             "Tax Information:":         "Tax Information",
             "Billing Information":      "Billing Information",
             "Billing Address:":         "Billing Address",
@@ -53,7 +52,7 @@ $(function ()
             "Credit card number: cannot be blank.":             "Credit card number: cannot be blank.",
 
             // buttons
-            "Update Totals":        "Update Totals",
+            "Update Totals":        "Opdater totaler",
             "Validate VAT Number":  "Validate VAT Number",
             "Place My Order":       "Place My Order",
 
@@ -92,10 +91,10 @@ $(function ()
     {
         translate
         (
-            "h2, span",
+            "h2, h3, span",
             {
                 // top level headers
-                "Purchase Summary:": "Purchase Summary"
+                "Purchase Summary:": "Købstotal"
             }
         );
     });

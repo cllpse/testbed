@@ -1,23 +1,39 @@
 @import "./_colors.scss";
 
+html
+{
+	box-sizing: border-box !important;
+}
+
+*, *:before, *:after
+{
+	box-sizing: inherit !important;
+}
+
 body
 {
+	width: 100% !important;
+
 	#security, #footer
 	{
 		display: none !important;
+		float: none !important;
+		clear: both !important;
 	}
 
 	#page_wrapper
 	{
 		margin: 55px 0;
 		padding-bottom: 0 !important;
+		float: none;
+		clear: both;
 	}
 
 	#page_column
 	{
 		background-color: red;
 
-		width: 992px;
+		width: 100%;
 		margin: 0 auto;
 
 		*
@@ -33,10 +49,12 @@ body
 		{
 			background-color: fuchsia;
 
+			float: none;
+			clear: both;
 			border-radius: 2px;
 			box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
-			width: auto;
-			padding: 20px;
+			width: 100%;
+			padding: 20px !important;
 			border: 0;
 
 			#company
@@ -296,6 +314,14 @@ html > body
 
 				}
 
+				br
+				{
+					display: none !important;
+					height: 0 !important;
+					position: absolute !important;
+					overflow: hidden !important;
+				}
+
 				#hosted-description
 				{
 					background-color: transparent;
@@ -307,6 +333,17 @@ html > body
 					label
 					{
 						font-weight: 400;
+						display: inline-block;
+					}
+
+					input
+					{
+						display: block;
+					}
+
+					select
+					{
+						display: inline-block;
 					}
 
 					h2
@@ -361,11 +398,6 @@ html > body
 								clear: both !important;
 							}
 
-							br
-							{
-								display: none !important;
-							}
-
 							.component-description
 							{
 								// color: $grey500;
@@ -405,9 +437,7 @@ html > body
 
 							.checkbox.component-price
 							{
-								float: left;
-								display: inline-block;
-								width: 100%;
+								display: block;
 								margin-left: -10px;
 								margin-right: -10px;
 								margin-bottom: -10px;
@@ -417,6 +447,203 @@ html > body
 								background-color: $grey300;
 								border-bottom-left-radius: 2px;
 								border-bottom-right-radius: 2px;
+							}
+						}
+					}
+				}
+
+				#summary
+				{
+					background-color: $grey200;
+					padding: 10px;
+					border-radius: 2px;
+
+					h2
+					{
+						margin-top: 0;
+						margin-bottom: 10px;
+					}
+
+					> div
+					{
+						background-color: transparent;
+						margin-top: 10px;
+
+						ul
+						{
+							background-color: transparent;
+							list-style: disc;
+
+							li
+							{
+								background-image: none;
+								padding-left: 0;
+							}
+						}
+
+						&#total
+						{
+
+							margin-left: -10px;
+							margin-right: -10px;
+							margin-bottom: -10px;
+							padding: 10px;
+							border-top: 0;
+							background-color: $grey300;
+							border-bottom-left-radius: 2px;
+							border-bottom-right-radius: 2px;
+
+							h3
+							{
+								font-weight: 400;
+							}
+
+							> span
+							{
+								margin-left: 20px;
+
+								> span // "plus applicable taxes"
+								{
+									display: none;
+								}
+							}
+
+							> span + > span
+							{
+								// spinner
+							}
+						}
+					}
+				}
+
+				#summary + input + h2
+				{
+					visibility: hidden !important;
+					position: absolute !important;
+					z-index: -999999999 !important;
+				}
+
+				#summary + input + h2 + div
+				{
+					visibility: hidden !important;
+					position: absolute !important;
+					z-index: -999999999 !important;
+				}
+
+				#billing_info
+				{
+				}
+
+				#billing_info + h2
+				{
+					visibility: hidden !important;
+					position: absolute !important;
+					z-index: -999999999 !important;
+				}
+
+				#billing_address
+				{
+					visibility: hidden !important;
+					position: absolute !important;
+					z-index: -999999999 !important;
+				}
+
+				#billing_address + h2
+				{
+					visibility: hidden !important;
+					position: absolute !important;
+					z-index: -999999999 !important;
+				}
+
+				#contact_info
+				{
+					visibility: hidden !important;
+					position: absolute !important;
+					z-index: -999999999 !important;
+				}
+
+				#billing_info
+				{
+					border-radius: 2px;
+					padding: 10px;
+					padding-top: 0;
+					background-color: $grey200;
+					background-image: none;
+
+					> div
+					{
+						background-color: transparent;
+					}
+
+					#credit_card_info
+					{
+						/* background-color: $grey300;
+						display: inline-block;
+						margin-top: 20px;
+						padding: 10px;
+						border-radius: 10px; */
+
+						.fieldWithErrors
+						{
+							font-weight: 400;
+							margin-top: 10px;
+							display: block;
+						}
+
+						.fieldWithErrors + br + .fieldWithErrors
+						{
+							margin-top: 5px;
+						}
+
+						input, select
+						{
+							margin-top: 5px;
+						}
+
+						#subscription_payment_profile_attributes_full_number
+						{
+
+						}
+
+						#subscription_payment_profile_attributes_cvv
+						{
+							margin-top: 5px;
+						}
+
+						> div
+						{
+							background-color: transparent;
+
+							> p
+							{
+								background-color: transparent;
+
+								.hint
+								{
+									display: none;
+								}
+							}
+						}
+
+						#credit_card_logos
+						{
+							background-color: $grey300;
+							display: inline-block;
+							margin: 20px;
+							padding: 5px;
+							border-radius: 2px;
+
+							display: none;
+
+							img
+							{
+								float: left;
+								margin-right: 5px;
+
+								&:last-child
+								{
+									margin-right: 0;
+								}
 							}
 						}
 					}
