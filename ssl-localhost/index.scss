@@ -10,6 +10,49 @@ html
 	box-sizing: inherit !important;
 }
 
+
+@media (max-width: 9999px)
+{
+	html body #page_column
+	{
+		width: 992px;
+	}
+
+	html body #page_column form input
+	{
+		width: 260px !important;
+	}
+}
+
+
+@media (max-width: 992px)
+{
+	html body #page_column
+	{
+		width: 768px;
+	}
+
+	html body #page_column form input
+	{
+		width: 260px !important;
+	}
+}
+
+
+@media (max-width: 768px)
+{
+	html body #page_column
+	{
+		width: 100%;
+	}
+
+	html body #page_column form input
+	{
+		width: 100% !important;
+	}
+}
+
+
 body
 {
 	width: 100% !important;
@@ -33,7 +76,7 @@ body
 	{
 		background-color: red;
 
-		width: 100%;
+		width: 992px;
 		margin: 0 auto;
 
 		*
@@ -254,14 +297,21 @@ body
 				#apply_component_button, #vat_button, #subscription_submit
 				{
 					display: inline-block;
-					border-radius: 6px;
+					border-radius: 4px;
 					width: auto;
 					height: auto;
 					margin: 0;
 					padding: 10px;
 					border: 0;
-					background: #000;
+					background: $grey600;
+					font-weight: 400;
 					color: #fff;
+					box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+
+					&:active
+					{
+						box-shadow: none;
+					}
 				}
 			}
 		}
@@ -493,7 +543,7 @@ html > body
 							border-bottom-left-radius: 2px;
 							border-bottom-right-radius: 2px;
 
-							h3
+							h3, h3 span
 							{
 								font-weight: 400;
 							}
@@ -562,6 +612,48 @@ html > body
 					z-index: -999999999 !important;
 				}
 
+				#contact_info + h2 + div
+				{
+					background-color: lighten($greenA400, 10);
+					padding: 10px;
+					border-top-left-radius: 2px;
+					border-top-right-radius: 2px;
+
+					input, label
+					{
+						line-height: 16px;
+						float: left;
+						margin: 0;
+						width: auto !important;
+					}
+
+					input
+					{
+						margin-top: 4px; // 16px / 4
+					}
+
+
+
+					label
+					{
+						margin-left: 10px;
+					}
+				}
+
+				.button_wrapper
+				{
+					background-color: $greenA400;
+					padding: 20px;
+					border-bottom-left-radius: 2px;
+					border-bottom-right-radius: 2px;
+
+					#subscription_submit
+					{
+						background: darken($greenA400, 10);
+						margin: 0 auto;
+					}
+				}
+
 				#billing_info
 				{
 					border-radius: 2px;
@@ -610,6 +702,11 @@ html > body
 							margin-top: 5px;
 						}
 
+						label[for="subscription_payment_profile_attributes_expiration_month"]
+						{
+							display: block;
+						}
+
 						> div
 						{
 							background-color: transparent;
@@ -645,6 +742,48 @@ html > body
 									margin-right: 0;
 								}
 							}
+						}
+					}
+				}
+
+				#errorExplanation
+				{
+					margin-top: 30px;
+					margin-left: -20px;
+					margin-right: -20px;
+					width: auto;
+					padding: 10px;
+					background-color: $red600;
+					border-bottom: solid 1px $red700;
+
+					> h2
+					{
+						color: #fff;
+						background-color: $red700;
+						border-radius: 0;
+						display: block;
+						width: auto;
+						float: none;
+						clear: both;
+						padding: 10px;
+						margin-left: -10px;
+						margin-top: -10px;
+						margin-right: -10px;
+					}
+
+					> p
+					{
+						margin-top: 10px;
+						color: #fff;
+					}
+
+					> ul
+					{
+						margin-top: 10px;
+
+						li
+						{
+							color: #fff;
 						}
 					}
 				}

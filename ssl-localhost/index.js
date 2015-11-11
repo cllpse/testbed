@@ -32,29 +32,29 @@ $(function ()
 
     translate
     (
-        "h1, h2, label, li, input, a, span",
+        "h1, h2, label, li, input, a, span, .errorExplanation p",
         {
             // top level headers
             "Configure Your Plan:":     "Tilkøb point og services",
             "Tax Information:":         "Tax Information",
-            "Billing Information":      "Billing Information",
+            "Billing Information":      "Kortinformation",
             "Billing Address:":         "Billing Address",
             "Contact Information:":     "Contact Information",
 
             // errors
-            "There were problems with your submission":         "There were problems with your submission",
-            "Please correct the following problems:":           "Please correct the following problems",
-            "First name: cannot be blank.":                     "First name: cannot be blank.",
-            "Last name: cannot be blank.":                      "Last name: cannot be blank.",
-            "Email address: cannot be blank.":                  "Email address: cannot be blank.",
-            "Credit card expiration month: cannot be blank.":   "Credit card expiration month: cannot be blank.",
-            "Credit card expiration year: cannot be blank.":    "Credit card expiration year: cannot be blank.",
-            "Credit card number: cannot be blank.":             "Credit card number: cannot be blank.",
+            "There were problems with your submission":         "Vi kunne ikke gennemføre din bestilling",
+            "Please correct the following problems:":           "Ret venligst følgende fejl",
+            "First name: cannot be blank.":                     "Fornavn skal udfyldes",
+            "Last name: cannot be blank.":                      "Efternavn skal udfyldes",
+            "Email address: cannot be blank.":                  "E-mail adresse skal udfyldes",
+            "Credit card expiration month: cannot be blank.":   "Udløbsmåned på kreditkort skal udfyldes",
+            "Credit card expiration year: cannot be blank.":    "Udløbsår på kreditkort skal udfyldes",
+            "Credit card number: cannot be blank.":             "Kortnummer på kreditkort skal udfyldes",
 
             // buttons
             "Update Totals":        "Opdater totaler",
             "Validate VAT Number":  "Validate VAT Number",
-            "Place My Order":       "Place My Order",
+            "Place My Order":       "Godkend betaling og køb",
 
             // misc
             "Residents of the EU, outside of DK, may enter their VAT number to be exempt from tax.":    "Residents of the EU, outside of DK, may enter their VAT number to be exempt from tax.",
@@ -62,11 +62,11 @@ $(function ()
 
             // labels
             "VAT Number":               "VAT Number",
-            "* First Name on Account":  "First Name on Account",
-            "* Last Name on Account":   "Last Name on Account",
-            "* Card Number":            "Card Number",
+            "* First Name on Account":  "Fornavn på kort",
+            "* Last Name on Account":   "Efternavn på kort",
+            "* Card Number":            "Kortnummer",
             "* CVV":                    "CVV",
-            "* Expiration Date":        "Expiration Date",
+            "* Expiration Date":        "Udløbsdato",
             "* Address 1":              "Address 1",
             "Address 2":                "Address 2",
             "* Billing Country":        "Billing Country",
@@ -80,8 +80,8 @@ $(function ()
             "Organization":             "Organization",
 
             // unit price fix
-            "kr1,350.00": "1.350,00 DKK",
-            "kr2,000.00": "2.000,00 DKK",
+            "kr1,350.00": "1.350,00 Kr",
+            "kr2,000.00": "2.000,00 Kr",
             "Add for kr19.00": "Tilføj til 19,00 DKK per måned"
         }
     );
@@ -97,6 +97,25 @@ $(function ()
                 "Purchase Summary:": "Købstotal"
             }
         );
+    });
+
+
+    $("#subscription_submit").click(function ()
+    {
+        var that = this;
+        var i = 0;
+
+        if ($("#accept_terms").is(":checked"))
+        {
+            var interval = setInterval(function ()
+            {
+                i++;
+
+                if (i > 500) clearInterval(interval);
+
+                that.value = "Arbejder...";
+            }, 1);
+        }
     });
 
 });

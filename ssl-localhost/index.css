@@ -4,6 +4,24 @@ html {
 *, *:before, *:after {
   box-sizing: inherit !important; }
 
+@media (max-width: 9999px) {
+  html body #page_column {
+    width: 992px; }
+  html body #page_column form input {
+    width: 260px !important; } }
+
+@media (max-width: 992px) {
+  html body #page_column {
+    width: 768px; }
+  html body #page_column form input {
+    width: 260px !important; } }
+
+@media (max-width: 768px) {
+  html body #page_column {
+    width: 100%; }
+  html body #page_column form input {
+    width: 100% !important; } }
+
 body {
   width: 100% !important; }
   body #security, body #footer {
@@ -17,7 +35,7 @@ body {
     clear: both; }
   body #page_column {
     background-color: red;
-    width: 100%;
+    width: 992px;
     margin: 0 auto; }
     body #page_column * {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -140,14 +158,18 @@ body {
         clear: both; }
       body #page_column #content form #apply_component_button, body #page_column #content form #vat_button, body #page_column #content form #subscription_submit {
         display: inline-block;
-        border-radius: 6px;
+        border-radius: 4px;
         width: auto;
         height: auto;
         margin: 0;
         padding: 10px;
         border: 0;
-        background: #000;
-        color: #fff; }
+        background: #757575;
+        font-weight: 400;
+        color: #fff;
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4); }
+        body #page_column #content form #apply_component_button:active, body #page_column #content form #vat_button:active, body #page_column #content form #subscription_submit:active {
+          box-shadow: none; }
 
 html > body {
   visibility: visible !important; }
@@ -271,7 +293,7 @@ html > body {
           background-color: #E0E0E0;
           border-bottom-left-radius: 2px;
           border-bottom-right-radius: 2px; }
-          html > body #page_wrapper #page_column #content #summary > div#total h3 {
+          html > body #page_wrapper #page_column #content #summary > div#total h3, html > body #page_wrapper #page_column #content #summary > div#total h3 span {
             font-weight: 400; }
           html > body #page_wrapper #page_column #content #summary > div#total > span {
             margin-left: 20px; }
@@ -301,6 +323,28 @@ html > body {
       visibility: hidden !important;
       position: absolute !important;
       z-index: -999999999 !important; }
+    html > body #page_wrapper #page_column #content #contact_info + h2 + div {
+      background-color: #1aff8f;
+      padding: 10px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px; }
+      html > body #page_wrapper #page_column #content #contact_info + h2 + div input, html > body #page_wrapper #page_column #content #contact_info + h2 + div label {
+        line-height: 16px;
+        float: left;
+        margin: 0;
+        width: auto !important; }
+      html > body #page_wrapper #page_column #content #contact_info + h2 + div input {
+        margin-top: 4px; }
+      html > body #page_wrapper #page_column #content #contact_info + h2 + div label {
+        margin-left: 10px; }
+    html > body #page_wrapper #page_column #content .button_wrapper {
+      background-color: #00E676;
+      padding: 20px;
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px; }
+      html > body #page_wrapper #page_column #content .button_wrapper #subscription_submit {
+        background: #00b35c;
+        margin: 0 auto; }
     html > body #page_wrapper #page_column #content #billing_info {
       border-radius: 2px;
       padding: 10px;
@@ -325,6 +369,8 @@ html > body {
           margin-top: 5px; }
         html > body #page_wrapper #page_column #content #billing_info #credit_card_info #subscription_payment_profile_attributes_cvv {
           margin-top: 5px; }
+        html > body #page_wrapper #page_column #content #billing_info #credit_card_info label[for="subscription_payment_profile_attributes_expiration_month"] {
+          display: block; }
         html > body #page_wrapper #page_column #content #billing_info #credit_card_info > div {
           background-color: transparent; }
           html > body #page_wrapper #page_column #content #billing_info #credit_card_info > div > p {
@@ -343,3 +389,30 @@ html > body {
             margin-right: 5px; }
             html > body #page_wrapper #page_column #content #billing_info #credit_card_info #credit_card_logos img:last-child {
               margin-right: 0; }
+    html > body #page_wrapper #page_column #content #errorExplanation {
+      margin-top: 30px;
+      margin-left: -20px;
+      margin-right: -20px;
+      width: auto;
+      padding: 10px;
+      background-color: #E53935;
+      border-bottom: solid 1px #D32F2F; }
+      html > body #page_wrapper #page_column #content #errorExplanation > h2 {
+        color: #fff;
+        background-color: #D32F2F;
+        border-radius: 0;
+        display: block;
+        width: auto;
+        float: none;
+        clear: both;
+        padding: 10px;
+        margin-left: -10px;
+        margin-top: -10px;
+        margin-right: -10px; }
+      html > body #page_wrapper #page_column #content #errorExplanation > p {
+        margin-top: 10px;
+        color: #fff; }
+      html > body #page_wrapper #page_column #content #errorExplanation > ul {
+        margin-top: 10px; }
+        html > body #page_wrapper #page_column #content #errorExplanation > ul li {
+          color: #fff; }
