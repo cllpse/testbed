@@ -143,7 +143,7 @@ $(function ()
                             <th id="do-the-math-subscription-unit-total-amount">597,00 kr</th>
                         </tr>
 
-                        <tr class="highlight">
+                        <tr class="_highlight">
                             <td>Introduktionsrabat</td>
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
@@ -200,6 +200,8 @@ $(function ()
     */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1]);
 });
 
+quantity_component_number_field
+
 // do-the-math-subscription-unit-amount
 // do-the-math-subscription-unit-count
 // do-the-math-subscription-unit-total-amount
@@ -210,15 +212,19 @@ $(function ()
 // do-the-math-subscription-extra-count
 // do-the-math-subscription-extra-total-amount
 
+// #component_allocated_quantity_126677 -- 1.350,00 DKK
 // do-the-math-point-addition-15
 // do-the-math-point-addition-15-unit-amount
 // do-the-math-point-addition-15-unit-count
 // do-the-math-point-addition-15-unit-total-amount
 
+// #component_allocated_quantity_129053 -- 2.000,00 DKK
 // do-the-math-point-addition-25
 // do-the-math-point-addition-25-unit-amount
 // do-the-math-point-addition-25-unit-count
 // do-the-math-point-addition-25-unit-total-amount
+
+// #component_checkbox_134152 -- 19,00 DKK
 
 // do-the-math-vat-amount
 // do-the-math-total-amount
