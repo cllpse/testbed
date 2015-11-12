@@ -80,9 +80,9 @@ $(function ()
             "Organization":             "Organization",
 
             // unit price fix
-            "kr1,350.00": "1.350,00 Kr",
-            "kr2,000.00": "2.000,00 Kr",
-            "Add for kr19.00": "Tilføj til 19,00 DKK per måned"
+            "kr1,350.00": "Pris: 1.350,00 kr",
+            "kr2,000.00": "Pris: 2.000,00 kr",
+            "Add for kr19.00": "Tilføj til 19,00 kr per måned"
         }
     );
 
@@ -118,4 +118,107 @@ $(function ()
         }
     });
 
+
+    $("#component_configuration").after((function ()
+    {/*
+        <div id="do-the-math">
+            <h2>Købstotal</h2>
+
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <th>Enhedspris</th>
+                            <th>Antal</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Abonnement, basis</td>
+                            <th id="do-the-math-subscription-unit-amount">199,00 kr</th>
+                            <th id="do-the-math-subscription-unit-count">3</th>
+                            <th id="do-the-math-subscription-unit-total-amount">597,00 kr</th>
+                        </tr>
+
+                        <tr class="highlight">
+                            <td>Introduktionsrabat</td>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th id="do-the-math-subscription-rebate-total-amount">-199,00 kr</th>
+                        </tr>
+
+                        <tr class="line">
+                            <td>Profilside, top-billede</td>
+                            <th id="do-the-math-subscription-extra-amount">19,00 kr</th>
+                            <th id="do-the-math-subscription-extra-count">3</th>
+                            <th id="do-the-math-subscription-extra-total-amount">57,00 kr</th>
+                        </tr>
+
+                        <tr class="line sum">
+                            <th colspan="4">455,00 kr</th>
+                        </tr>
+                    <tbody>
+
+                    <tbody>
+                        <tr id="do-the-math-point-addition-15">
+                            <td>Tilkøb, 15 point</td>
+                            <th id="do-the-math-point-addition-15-unit-amount">1.350,00 kr</th>
+                            <th id="do-the-math-point-addition-15-unit-count">3</th>
+                            <th id="do-the-math-point-addition-15-unit-total-amount">4.050,00 kr</th>
+                        </tr>
+
+                        <tr class="line" id="do-the-math-point-addition-25">
+                            <td>Tilkøb, 25 point</td>
+                            <th id="do-the-math-point-addition-25-unit-amount">2.000,00 kr</th>
+                            <th id="do-the-math-point-addition-25-unit-count">3</th>
+                            <th id="do-the-math-point-addition-25-unit-total-amount">6.000,00 kr</th>
+                        </tr>
+
+                        <tr class="line sum">
+                            <th colspan="4">10.050,00 kr</th>
+                        </tr>
+                    <tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Moms &ndash; 25%</td>
+                            <th colspan="1" id="do-the-math-vat-amount">2.626,25 kr</th>
+                        </tr>
+
+                        <tr class="line total">
+                            <td colspan="3">Til betaling</td>
+                            <th colspan="1" id="do-the-math-total-amount">13.131,25 kr</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1]);
 });
+
+// do-the-math-subscription-unit-amount
+// do-the-math-subscription-unit-count
+// do-the-math-subscription-unit-total-amount
+
+// do-the-math-subscription-rebate-total-amount
+
+// do-the-math-subscription-extra-amount
+// do-the-math-subscription-extra-count
+// do-the-math-subscription-extra-total-amount
+
+// do-the-math-point-addition-15
+// do-the-math-point-addition-15-unit-amount
+// do-the-math-point-addition-15-unit-count
+// do-the-math-point-addition-15-unit-total-amount
+
+// do-the-math-point-addition-25
+// do-the-math-point-addition-25-unit-amount
+// do-the-math-point-addition-25-unit-count
+// do-the-math-point-addition-25-unit-total-amount
+
+// do-the-math-vat-amount
+// do-the-math-total-amount

@@ -50,6 +50,21 @@ html
 	{
 		width: 100% !important;
 	}
+
+	html body div#do-the-math
+	{
+		overflow-x: scroll !important;
+	}
+
+	html body div#do-the-math table
+	{
+		width: 576px !important; /* x 1.5 of 768px */
+	}
+
+	html body div#do-the-math tr th, html body div#do-the-math tr td
+	{
+		padding: 2px !important;
+	}
 }
 
 
@@ -499,6 +514,11 @@ html > body
 								border-bottom-right-radius: 2px;
 							}
 						}
+
+						> div + div + div + div
+						{
+							display: none !important;
+						}
 					}
 				}
 
@@ -507,6 +527,8 @@ html > body
 					background-color: $grey200;
 					padding: 10px;
 					border-radius: 2px;
+
+					display: none !important; /* HIDE */
 
 					h2
 					{
@@ -784,6 +806,89 @@ html > body
 						li
 						{
 							color: #fff;
+						}
+					}
+				}
+			}
+
+			div#do-the-math
+			{
+				background-color: transparent;
+
+				h2
+				{
+					margin-top: 0;
+				}
+
+				div
+				{
+					border-radius: 2px;
+					margin-top: 10px;
+					padding: 10px;
+					background-color: $grey200;
+
+					table
+					{
+						border-collapse: collapse;
+						width: 100%;
+
+						.highlight
+						{
+							background-color: $grey300;
+						}
+
+						.line
+						{
+							border-bottom: solid 1px #000;
+
+							&.sum
+							{
+								border-bottom: 0;
+
+								td, th
+								{
+									padding-bottom: 20px;
+									font-weight: 400;
+								}
+							}
+
+							&.total
+							{
+								border-bottom: solid 2px #000;
+							}
+						}
+
+						thead
+						{
+							td, th
+							{
+								font-weight: 400;
+								padding: 10px 20px;
+							}
+						}
+
+						tfoot
+						{
+							td, th
+							{
+								font-weight: 400;
+								padding: 10px;
+							}
+						}
+
+						tr
+						{
+							td
+							{
+								text-align: left;
+								padding: 2px 10px;
+							}
+
+							th
+							{
+								text-align: right;
+								padding: 2px 10px;
+							}
 						}
 					}
 				}

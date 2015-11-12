@@ -20,7 +20,14 @@ html {
   html body #page_column {
     width: 100%; }
   html body #page_column form input {
-    width: 100% !important; } }
+    width: 100% !important; }
+  html body div#do-the-math {
+    overflow-x: scroll !important; }
+  html body div#do-the-math table {
+    width: 576px !important;
+    /* x 1.5 of 768px */ }
+  html body div#do-the-math tr th, html body div#do-the-math tr td {
+    padding: 2px !important; } }
 
 body {
   width: 100% !important; }
@@ -268,10 +275,14 @@ html > body {
           background-color: #E0E0E0;
           border-bottom-left-radius: 2px;
           border-bottom-right-radius: 2px; }
+      html > body #page_wrapper #page_column #content form .component_configuration > div + div + div + div {
+        display: none !important; }
     html > body #page_wrapper #page_column #content #summary {
       background-color: #EEEEEE;
       padding: 10px;
-      border-radius: 2px; }
+      border-radius: 2px;
+      display: none !important;
+      /* HIDE */ }
       html > body #page_wrapper #page_column #content #summary h2 {
         margin-top: 0;
         margin-bottom: 10px; }
@@ -416,3 +427,38 @@ html > body {
         margin-top: 10px; }
         html > body #page_wrapper #page_column #content #errorExplanation > ul li {
           color: #fff; }
+  html > body #page_wrapper #page_column div#do-the-math {
+    background-color: transparent; }
+    html > body #page_wrapper #page_column div#do-the-math h2 {
+      margin-top: 0; }
+    html > body #page_wrapper #page_column div#do-the-math div {
+      border-radius: 2px;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #EEEEEE; }
+      html > body #page_wrapper #page_column div#do-the-math div table {
+        border-collapse: collapse;
+        width: 100%; }
+        html > body #page_wrapper #page_column div#do-the-math div table .highlight {
+          background-color: #E0E0E0; }
+        html > body #page_wrapper #page_column div#do-the-math div table .line {
+          border-bottom: solid 1px #000; }
+          html > body #page_wrapper #page_column div#do-the-math div table .line.sum {
+            border-bottom: 0; }
+            html > body #page_wrapper #page_column div#do-the-math div table .line.sum td, html > body #page_wrapper #page_column div#do-the-math div table .line.sum th {
+              padding-bottom: 20px;
+              font-weight: 400; }
+          html > body #page_wrapper #page_column div#do-the-math div table .line.total {
+            border-bottom: solid 2px #000; }
+        html > body #page_wrapper #page_column div#do-the-math div table thead td, html > body #page_wrapper #page_column div#do-the-math div table thead th {
+          font-weight: 400;
+          padding: 10px 20px; }
+        html > body #page_wrapper #page_column div#do-the-math div table tfoot td, html > body #page_wrapper #page_column div#do-the-math div table tfoot th {
+          font-weight: 400;
+          padding: 10px; }
+        html > body #page_wrapper #page_column div#do-the-math div table tr td {
+          text-align: left;
+          padding: 2px 10px; }
+        html > body #page_wrapper #page_column div#do-the-math div table tr th {
+          text-align: right;
+          padding: 2px 10px; }
