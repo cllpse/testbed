@@ -335,9 +335,9 @@ html > body {
       position: absolute !important;
       z-index: -999999999 !important; }
     html > body #page_wrapper #page_column #content #component_configuration {
-      visibility: hidden !important;
-      position: absolute !important;
-      z-index: -999999999 !important; }
+      /* visibility: hidden !important;
+					position: absolute !important;
+					z-index: -999999999 !important; */ }
     html > body #page_wrapper #page_column #content form > div + input + h2 {
       display: none !important; }
     html > body #page_wrapper #page_column #content #coupon-code-container {

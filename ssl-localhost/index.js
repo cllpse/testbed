@@ -1,6 +1,5 @@
 $(function ()
 {
-
     var whitespaceExpression = /^\s+|\s+$/g;
 
 
@@ -200,7 +199,7 @@ $(function ()
     */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1]);
 
 
-    window.toNumber = function (s)
+    var toNumber = function (s)
     {
         var decimals = (function ()
         {
@@ -224,7 +223,7 @@ $(function ()
         return decimals + thousands;
     };
 
-    window.toFormattedNumber = function (n)
+    var toFormattedNumber = function (n)
     {
         var s = n.toString();
 
@@ -236,7 +235,7 @@ $(function ()
             if (i === -1)
             {
                 return [
-                    parseInt(s),
+                    parseInt(s, 10),
                     0
                 ];
             }
@@ -286,19 +285,51 @@ $(function ()
         }());
 
 
-        console.log("DEC", decimals);
-        console.log("THOU", thousands);
-
-
         return thousands + "," + decimals + " kr";
     };
 
 
-    $("#component_allocated_quantity_126677").bind("change blur keyup", function ()
+    var doTheMath = function ()
     {
-        console.log(this, "was changed");
+        var prices
+        {
+            headerImage: 19.00,
+            additionalPointsSmall: 1350.00,
+            additionalPointsLarge: 2000.00
+        };
+
+        (function () // compute header-image
+        {
+            var amount = prices.headerImage;
+            var count = parseInt($("#do-the-math-subscription-extra-count").html(), 10);
+
+            $("#do-the-math-subscription-extra-total-amount");
+        }());
+
+        // HERE BE DRAGONS
+    };
+
+
+    var component_allocated_quantity_126677 = $("#component_allocated_quantity_126677");
+    var component_allocated_quantity_129053 = $("#component_allocated_quantity_129053");
+    var component_checkbox_134152 = $("#component_checkbox_134152");
+
+
+    component_allocated_quantity_126677.bind("change", function ()
+    {
+    });
+
+
+    component_allocated_quantity_129053.bind("change", function ()
+    {
+    });
+
+
+    component_checkbox_134152.bind("click", function ()
+    {
     });
 });
+
 
 // do-the-math-subscription-unit-amount
 // do-the-math-subscription-unit-count
