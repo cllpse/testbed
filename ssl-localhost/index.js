@@ -198,9 +198,107 @@ $(function ()
         </div>
 
     */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1]);
-});
 
-quantity_component_number_field
+
+    window.toNumber = function (s)
+    {
+        var decimals = (function ()
+        {
+            var i = s.lastIndexOf(",");
+
+            if (i !== -1)
+            {
+                return parseInt(s.substring(i + 1, s.length), 10) / 100;
+            }
+
+            return 0;
+        }());
+
+
+        var thousands = (function ()
+        {
+            return parseInt(s.replace(/,\d+\s?[a-z]+$/i, "").replace(/\.+/g, ""), 10);
+        }());
+
+
+        return decimals + thousands;
+    };
+
+    window.toFormattedNumber = function (n)
+    {
+        var s = n.toString();
+
+
+        var a = (function ()
+        {
+            var i = s.lastIndexOf(".");
+
+            if (i === -1)
+            {
+                return [
+                    parseInt(s),
+                    0
+                ];
+            }
+
+            return [
+                parseInt(s.substring(0, i) || 0, 10),
+                parseInt(s.substring(i + 1, s.length) || 0, 10)
+            ];
+        }());
+
+
+        var decimals = (function ()
+        {
+            var s = (a[1] || 0).toString();
+
+            if (s.length < 2)
+            {
+                return s + "0";
+            }
+
+            return s;
+        }());
+
+
+        var thousands = (function ()
+        {
+            var s = a[0].toString();
+            var i = s.length;
+            var ii = 0;
+            var r = [];
+
+            while (i--)
+            {
+                ii++;
+
+                r.push(s[i]);
+
+                if (ii > 2 && i > 0)
+                {
+                    r.push(".");
+
+                    ii = 0;
+                }
+            }
+
+            return r.reverse().join("");
+        }());
+
+
+        console.log("DEC", decimals);
+        console.log("THOU", thousands);
+
+
+        return thousands + "," + decimals + " kr";
+    };
+
+
+    $("#component_allocated_quantity_126677").bind("change blur keyup", function ()
+    {
+        console.log(this, "was changed");
+    });
+});
 
 // do-the-math-subscription-unit-amount
 // do-the-math-subscription-unit-count

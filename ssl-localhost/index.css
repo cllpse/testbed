@@ -374,7 +374,6 @@ html > body {
     html > body #page_wrapper #page_column #content #billing_info {
       border-radius: 2px;
       padding: 20px;
-      padding-top: 0;
       background-color: #EEEEEE;
       background-image: none; }
       html > body #page_wrapper #page_column #content #billing_info > div {
