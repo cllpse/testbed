@@ -1,0 +1,3 @@
+http://www.akadia.com/services/ssh_test_certificate.html
+
+http-server --ssl --cert server.crt  --key server.key  
